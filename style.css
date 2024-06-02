@@ -1,72 +1,247 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #a16d6d;
-    display: flex; /* Center content vertically */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: url('https://wallpapercave.com/wp/wp13004806.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: rgb(202, 218, 211);
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    text-align: center; /* Center content horizontally */
+  padding: 20px;
 }
 
-.background-image {
-    background-image: url("https://img.freepik.com/free-photo/dark-style-valentines-day-celebration_23-2151133837.jpg?t=st=1717147896~exp=1717151496~hmac=c5053b9dead25867d1839ad72a4365eec59f7fc99c6fe3397a69c2abe829771d&w=996"); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place background image behind other elements */
+header {
+  background-color: rgba(88, 63, 114, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-.info-box {
-    padding: 20px;
-    background-color: rgba(188, 180, 180, 0.8); /* Semi-transparent white background */
-    border-radius: 5px;
-    
+header h1, header p {
+  margin: 20px 0;
 }
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: #333;
+.gallery {
+  background-color: rgba(185, 83, 83, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-p {
-    font-size: 1.2em;
-    color: #5f0f1d;
-    margin-bottom: 10px;
+.gallery h2 {
+  margin-bottom: 20px;
 }
 
-#timer {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #2f120b;
-    position: relative; /* Required for party popper animation */
-}
-#continue-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.2s ease; /* Add button click effect */
+.gallery-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-#continue-button:hover {
-    background-color: #3e8e41;
+.gallery-images img {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-#continue-button:active { /* Add button click effect */
-    transform: translateY(2px);
+.gallery-images img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.love-letter {
+  background-color: rgba(11, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.love-letter h2, .love-letter p {
+  margin: 20px 0;
+}
+
+.quiz-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.quiz-section h2 {
+  margin-bottom: 20px;
+}
+
+.quiz {
+  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: rgb(63, 19, 19);
+}
+
+.quiz p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #15112c;
+}
+
+.quiz input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.quiz label {
+  cursor: pointer;
+}
+
+.quiz:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #e67e22;
+  transform: scale(1.1);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gif-container img {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content, #caption {
+  animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+  from {
+      transform: scale(0);
+  }
+  to {
+      transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+footer p {
+  margin: 0;
 }
